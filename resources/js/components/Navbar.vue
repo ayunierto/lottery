@@ -1,20 +1,30 @@
 <template>
     <v-app :theme="theme">
+        <!-- <v-navigation-drawer app> -->
+        <!-- -->
+        <!-- </v-navigation-drawer> -->
         <v-app-bar :elevation="10">
+            <Menu></Menu>
             <v-spacer></v-spacer>
-            
-            <v-btn
-            :prepend-icon="theme === 'light' ? 'mdi-weather-sunny' : 'mdi-weather-night'"
-            @click="onClick"
-            ></v-btn>
+            <v-btn :prepend-icon="theme === 'light' ? 'mdi-weather-sunny' : 'mdi-weather-night'" @click="onClick">
+            </v-btn>
             <v-btn icon="mdi-dots-vertical"></v-btn>
         </v-app-bar>
-        
+
+        <!-- Sizes your content based upon application components -->
         <v-main>
-            <v-container>
+
+            <!-- Provides the application the proper gutter -->
+            <v-container fluid>
+
+                <!-- If using vue-router -->
                 <router-view></router-view>
             </v-container>
         </v-main>
+
+        <v-footer app>
+            <Footer></Footer>
+        </v-footer>
     </v-app>
 </template>
 
@@ -23,7 +33,7 @@ import { ref } from 'vue'
 
 const theme = ref('light')
 
-function onClick () {
+function onClick() {
     theme.value = theme.value === 'light' ? 'dark' : 'light'
 }
 </script>
