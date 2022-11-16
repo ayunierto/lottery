@@ -1,7 +1,7 @@
 <template>
     <div class="portada">
         <span>
-            Este es el Contacto
+            Login aqui
         </span>
     </div>
 </template>

@@ -1,9 +1,9 @@
 <template>
     <div>
         <Navbar></Navbar>
-        <router-view></router-view>
     </div>
 </template>
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');    #app {
     font-family: 'Roboto', sans-serif;
