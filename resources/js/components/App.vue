@@ -2,22 +2,7 @@
     <v-app id="inspire" :theme="theme">
         
         <v-navigation-drawer v-model="drawer" temporary>
-            <template v-slot:prepend>
-                <v-list-item
-                lines="two"
-                prepend-avatar="https://randomuser.me/api/portraits/women/81.jpg"
-                title="Jane Smith"
-                subtitle="Logged in"
-                ></v-list-item>
-            </template>
-
-            <v-divider></v-divider>
-
-            <v-list density="compact" nav>
-                <v-list-item v-for="link in links" :prepend-icon="link.icon" :title="link.name" :value="link.name" :to="link.link"></v-list-item>
-            </v-list>
-            
-            <v-divider></v-divider>
+            <NavigationDrawer :links="links" />
         </v-navigation-drawer>
         
         <v-app-bar elevation="10">
@@ -53,6 +38,7 @@
 <script setup>
 import {ref} from 'vue'
 import Footer from '@/components/Footer.vue';
+import NavigationDrawer from '@/components/NavigationDrawer.vue';
 
 // Open and close navigation-drawer
 const drawer = ref(null)
