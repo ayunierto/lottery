@@ -1,10 +1,12 @@
 <template>
     <v-app :theme="theme">
-        <!-- <v-navigation-drawer app> -->
-        <!-- -->
-        <!-- </v-navigation-drawer> -->
+        <v-navigation-drawer v-model="menuLateral" temporary>
+        </v-navigation-drawer>
+        <Drawer></Drawer>
         <v-app-bar :elevation="10">
-            <Menu></Menu>
+            <v-app-bar-nav-icon class="d-none d-sm-flex d-md-none d-flex d-sm-none" @click="menuLateral = !menuLateral">
+            </v-app-bar-nav-icon>
+            <Menu app></Menu>
             <v-spacer></v-spacer>
             <v-btn :prepend-icon="theme === 'light' ? 'mdi-weather-sunny' : 'mdi-weather-night'" @click="onClick">
             </v-btn>
@@ -27,18 +29,22 @@
         </v-footer>
     </v-app>
 </template>
-
+<script>
+export default {
+    data() {
+        return {
+            menuLateral: true,
+        }
+    },
+}
+</script>
 <script setup>
 import { ref } from 'vue'
-
 const theme = ref('light')
-
 function onClick() {
     theme.value = theme.value === 'light' ? 'dark' : 'light'
 }
 </script>
-
-
 <!-- <template>
     <div>
         <v-card>
@@ -58,7 +64,6 @@ function onClick() {
         </v-card>
     </div>
 </template>
-
 <script>
 export default {
     data () {
