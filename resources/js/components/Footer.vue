@@ -1,5 +1,5 @@
 <template>
-    <v-footer :theme="theme" > 
+    <v-footer :theme="theme" border> 
         <v-row justify="center" no-gutters>
             <v-btn v-for="link in links" :key="link" variant="text" class="mx-2" rounded="xl">
                 {{ link }}
