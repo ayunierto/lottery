@@ -15,5 +15,13 @@
         <v-btn>
             CONTACTOS
         </v-btn>
+        <v-btn>
+            Ingresar
+        </v-btn>
+
     </div>
 </template>
+
+<script setup>
+
+</script>
