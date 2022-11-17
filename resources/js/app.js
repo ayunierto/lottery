@@ -8,7 +8,7 @@ import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
-import NavbarComponent from "@/components/Navbar.vue";
+import LayoutComponent from "@/components/Layout.vue";
 import FooterComponent from "@/components/Footer.vue";
 import MenuComponent from "@/components/Menu.vue";
 
@@ -19,7 +19,7 @@ const vuetify = createVuetify({
 })
 app.use(RouterWeb);
 app.use(vuetify)
-app.component('Navbar', NavbarComponent);
+app.component('Layout', LayoutComponent);
 app.component('Footer', FooterComponent);
 app.component('Menu', MenuComponent);
 app.mount('#app');
