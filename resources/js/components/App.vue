@@ -6,14 +6,18 @@
         </v-navigation-drawer>
         
         <v-app-bar elevation="10">
-            <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+            <v-app-bar-nav-icon @click="drawer = !drawer" class="d-flex d-md-none"></v-app-bar-nav-icon>
             
             <v-toolbar-title>
                 <v-img aspect-ratio="1" width="90" contain src='https://granrifagran.cl/Imagenes/LogoGrG_Rectacgulo.png'>
                 </v-img>
             </v-toolbar-title>
             
-            <Menu />
+            <template class="d-none d-md-flex">
+                <v-btn v-for="link in links" :key="link">
+                    {{ link }}
+                </v-btn>
+            </template>
             
             <v-btn :prepend-icon="theme === 'light' ? 'mdi-weather-sunny' : 'mdi-weather-night'" @click="onClick">Tema</v-btn>
             
@@ -22,7 +26,7 @@
         
         <v-main>
             <v-container>
-                <RouterView></RouterView>
+                <router-view></router-view>
             </v-container>
         </v-main>
         
@@ -33,7 +37,6 @@
 
 <script setup>
 import {ref} from 'vue'
-import Menu from "@/components/Menu.vue";
 import Footer from '@/components/Footer.vue';
 
 // Open and close navigation-drawer
@@ -46,10 +49,20 @@ function onClick () {
     theme.value = theme.value === 'light' ? 'dark' : 'light'
 }
 
+// Links for natigation
+const links = [
+    'INICIO',
+    'RIFAS',
+    'GANADORES',
+    'NOSOTROS',
+    'CONTÁCTANOS',
+    'INGRESAR',
+]
+
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');    
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
 
 #app {
     font-family: 'Roboto', sans-serif;

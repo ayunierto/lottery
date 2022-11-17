@@ -1,7 +1,7 @@
 import './bootstrap';
 
 import { createApp } from 'vue/dist/vue.esm-bundler';
-import App from './web/App.vue';
+import App from './components/App.vue';
 import RouterWeb from './router/index'
 import '@mdi/font/css/materialdesignicons.css'
 import 'vuetify/styles'
