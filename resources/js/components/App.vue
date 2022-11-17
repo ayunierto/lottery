@@ -2,7 +2,22 @@
     <v-app id="inspire" :theme="theme">
         
         <v-navigation-drawer v-model="drawer" temporary>
-            <!--  -->
+            <template v-slot:prepend>
+                <v-list-item
+                lines="two"
+                prepend-avatar="https://randomuser.me/api/portraits/women/81.jpg"
+                title="Jane Smith"
+                subtitle="Logged in"
+                ></v-list-item>
+            </template>
+
+            <v-divider></v-divider>
+
+            <v-list density="compact" nav>
+                <v-list-item v-for="link in links" :prepend-icon="link.icon" :title="link.name" :value="link.name" :to="link.link"></v-list-item>
+            </v-list>
+            
+            <v-divider></v-divider>
         </v-navigation-drawer>
         
         <v-app-bar elevation="10">
@@ -15,13 +30,13 @@
             
             <template class="d-none d-md-flex">
                 <v-btn v-for="link in links" :key="link">
-                    {{ link }}
+                    {{ link.name }}
                 </v-btn>
             </template>
             
             <v-btn :prepend-icon="theme === 'light' ? 'mdi-weather-sunny' : 'mdi-weather-night'" @click="onClick">Tema</v-btn>
             
-            <v-btn icon="mdi-dots-vertical"></v-btn>
+            <!-- <v-btn icon="mdi-dots-vertical"></v-btn> -->
         </v-app-bar>
         
         <v-main>
@@ -32,7 +47,7 @@
         
         <Footer :theme="theme" />
         
-</v-app>
+    </v-app>
 </template>
 
 <script setup>
@@ -51,12 +66,12 @@ function onClick () {
 
 // Links for natigation
 const links = [
-    'INICIO',
-    'RIFAS',
-    'GANADORES',
-    'NOSOTROS',
-    'CONTÁCTANOS',
-    'INGRESAR',
+{ name : 'INICIO', link: '/', icon: 'mdi-home-city'},
+{ name : 'RIFAS', link: '', icon: '/rifas'},
+{ name : 'GANADORES', link: '', icon: '/winners'},
+{ name : 'NOSOTROS', link: '', icon: '/about'},
+{ name : 'CONTÁCTANOS', link: '', icon: '/contact'},
+{ name : 'INGRESAR', link: '/login', icon: 'mdi-account'},
 ]
 
 </script>
