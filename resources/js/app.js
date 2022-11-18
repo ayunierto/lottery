@@ -1,19 +1,27 @@
 import './bootstrap';
 
 import { createApp } from 'vue/dist/vue.esm-bundler';
+
 import App from './components/App.vue';
+
+// Router view
 import RouterWeb from './router/index'
-import '@mdi/font/css/materialdesignicons.css'
+
+// Vuetify
 import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 
-const app = createApp(App);
+// Iconos material design
+import '@mdi/font/css/materialdesignicons.css'
+
 const vuetify = createVuetify({
   components,
   directives,
 })
-app.use(RouterWeb);
-app.use(vuetify)
-app.mount('#app');
+
+createApp(App)
+.use(RouterWeb)
+.use(vuetify)
+.mount('#app')
