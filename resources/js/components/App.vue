@@ -63,7 +63,7 @@ const links = [
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto');
 
 #app {
     font-family: 'Roboto', sans-serif;
