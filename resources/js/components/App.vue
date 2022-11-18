@@ -54,7 +54,7 @@ function onClick () {
 const links = [
 { name : 'INICIO', link: '/', icon: 'mdi-home-city'},
 { name : 'RIFAS', link: '/rifas', icon: 'mdi-account'},
-{ name : 'GANADORES', link: '/winners', icon: 'mdi-account'},
+{ name : 'GANADORES', link: '/winners', icon: 'mdi-cake-variant'},
 { name : 'NOSOTROS', link: '/about', icon: 'mdi-account'},
 { name : 'CONTÁCTANOS', link: '/contact', icon: 'mdi-account'},
 { name : 'INGRESAR', link: '/login', icon: 'mdi-account'},
