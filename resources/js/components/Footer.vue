@@ -1,8 +1,8 @@
 <template>
-    <v-footer :theme="theme" border >
+    <v-footer :theme="theme" border>
         <v-row justify="center" no-gutters>
-            <v-btn v-for="link in links" :key="link" variant="text" class="mx-2" rounded="xl">
-                {{ link }}
+            <v-btn v-for="link in links" :key="link.link" :to="link.link" variant="text" class="mx-2" rounded="xl">
+                {{ link.name }}
             </v-btn>
             <v-col class="text-center mt-4" cols="12">
                 {{ new Date().getFullYear() }} — <strong>ALPA PERÚ</strong>
@@ -13,11 +13,11 @@
 
 <script setup>
 const links = [
-    'INICIO',
-    'RIFAS',
-    'GANADORES',
-    'NOSOTROS',
-    'CONTÁCTANOS',
+    { name: 'INICIO', link: '/', icon: 'mdi-home-city' },
+    { name: 'RIFAS', link: '/rifas', icon: 'mdi-account' },
+    { name: 'GANADORES', link: '/winners', icon: 'mdi-cake-variant' },
+    { name: 'NOSOTROS', link: '/about', icon: 'mdi-account' },
+    { name: 'CONTÁCTANOS', link: '/contact', icon: 'mdi-account' },
 ]
 const props = defineProps({
     theme: String,

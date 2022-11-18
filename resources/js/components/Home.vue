@@ -5,46 +5,54 @@
             </v-carousel-item>
         </v-carousel>
     </v-card>
-    <div>
-        <h1>Home</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil minus nulla eaque et ipsa quaerat sit, ratione
-            sunt, beatae eveniet, mollitia aperiam dolor aut. Vitae optio atque accusantium quis ea!</p>
-    </div>
     <br>
-    <v-card class="mx-auto">
+    <v-card class="mx-auto text-center">
         <v-container fluid>
             <v-row dense>
                 <v-col cols="12" md="4">
-                    <v-card prepend-icon="mdi-home">
-                        <template v-slot:title>
-                            This is a title
-                        </template>
+                    <v-card>
+                        <v-img src="https://ricamente.net/wp-content/uploads/2019/11/Dinero-extra.jpg" height="200px"
+                            cover></v-img>
 
-                        <v-card-text>
-                            This is content
-                        </v-card-text>
+                        <v-card-title>
+                            DINERO
+                        </v-card-title>
+                        <v-card-subtitle>
+                            Dinero en Efectivo
+                        </v-card-subtitle>
+                        <br>
                     </v-card>
                 </v-col>
                 <v-col cols="12" md="4">
-                    <v-card prepend-icon="mdi-home">
-                        <template v-slot:title>
-                            This is a title
-                        </template>
+                    <v-card>
+                        <v-img
+                            src="https://img.freepik.com/psd-premium/banner-3d-entrega-premios-plantilla-promocion-brasil_363450-180.jpg?w=2000"
+                            height="200px" cover></v-img>
 
-                        <v-card-text>
-                            This is content
-                        </v-card-text>
+                        <v-card-title>
+                            PREMIOS
+                        </v-card-title>
+
+                        <v-card-subtitle>
+                            Articulos y Viajes
+                        </v-card-subtitle>
+                        <br>
                     </v-card>
                 </v-col>
                 <v-col cols="12" md="4">
-                    <v-card prepend-icon="mdi-home">
-                        <template v-slot:title>
-                            This is a title
-                        </template>
+                    <v-card>
+                        <v-img
+                            src="https://bogota.gov.co/sites/default/files/2022-11/resultados-loteria-bogota-10-noviembre-2022-1.jpeg"
+                            height="200px" cover></v-img>
 
-                        <v-card-text>
-                            This is content
-                        </v-card-text>
+                        <v-card-title>
+                            DIVERSION
+                        </v-card-title>
+
+                        <v-card-subtitle>
+                            Diversión Asegurada
+                        </v-card-subtitle>
+                        <br>
                     </v-card>
                 </v-col>
             </v-row>
