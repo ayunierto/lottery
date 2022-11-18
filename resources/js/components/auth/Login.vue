@@ -21,7 +21,7 @@
                     <v-row align="center" no-gutters>
                         <v-col class="text-center">
                             <div class="my-2">
-                                <v-btn  prepend-icon="mdi-login" variant="outlined" color="primary" block>Acceder</v-btn>
+                                <v-btn variant="tonal" prepend-icon="mdi-login" color="primary" block>Acceder</v-btn>
                             </div>
                             <div>
                                 <v-btn color="primary" x-small text>¿Olvidó su contraseña?</v-btn>
