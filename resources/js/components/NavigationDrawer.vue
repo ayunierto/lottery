@@ -9,7 +9,7 @@
     <v-divider></v-divider>
     
     <v-list density="compact" nav>
-        <v-list-item v-for="link in links" :prepend-icon="link.icon" :title="link.name" :value="link.name" :to="link.link"></v-list-item>
+        <v-list-item v-for="link in links" :prepend-icon="link.icon" :title="link.name" :value="link.name" :to="link.link" :key="link.link"></v-list-item>
     </v-list>
     
 </template>

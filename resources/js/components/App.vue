@@ -14,7 +14,7 @@
             </v-toolbar-title>
             
             <template class="d-none d-md-flex">
-                <v-btn v-for="link in links" :key="link">
+                <v-btn v-for="link in links" :key="link.link" :to="link.link">
                     {{ link.name }}
                 </v-btn>
             </template>
@@ -44,7 +44,7 @@ import NavigationDrawer from '@/components/NavigationDrawer.vue';
 const drawer = ref(null)
 
 // Change theme
-const theme = ref('light')
+const theme = ref('dark')
 
 function onClick () {
     theme.value = theme.value === 'light' ? 'dark' : 'light'
@@ -53,10 +53,10 @@ function onClick () {
 // Links for natigation
 const links = [
 { name : 'INICIO', link: '/', icon: 'mdi-home-city'},
-{ name : 'RIFAS', link: '', icon: '/rifas'},
-{ name : 'GANADORES', link: '', icon: '/winners'},
-{ name : 'NOSOTROS', link: '', icon: '/about'},
-{ name : 'CONTÁCTANOS', link: '', icon: '/contact'},
+{ name : 'RIFAS', link: '/rifas', icon: 'mdi-account'},
+{ name : 'GANADORES', link: '/winners', icon: 'mdi-account'},
+{ name : 'NOSOTROS', link: '/about', icon: 'mdi-account'},
+{ name : 'CONTÁCTANOS', link: '/contact', icon: 'mdi-account'},
 { name : 'INGRESAR', link: '/login', icon: 'mdi-account'},
 ]
 
