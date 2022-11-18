@@ -1,15 +1,19 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
-const HomeComponent = () => import ('../components/Home.vue');
-const LoginComponent = () => import ('../components/auth/Login.vue');
+const Home = () => import ('../components/Home.vue');
+const Login = () => import ('../components/auth/Login.vue');
+const About = () => import ('../components/About/Index.vue');
+const Contact = () => import ('../components/Contact/Index.vue');
+const Raffles = () => import ('../components/Raffles/Index.vue');
+const Winners = () => import ('../components/Winners/Index.vue');
 
 const routes=[
-    { path:'/', name:'home', component: HomeComponent},
-    { path:'/login', name:'login', component: LoginComponent},
-    { path:'/rifas', name:'rifas', component: LoginComponent},
-    { path:'/winners', name:'winners', component: LoginComponent},
-    { path:'/about', name:'about', component: LoginComponent},
-    { path:'/contact', name:'contact', component: LoginComponent},
+    { path:'/', name:'home', component: Home},
+    { path:'/login', name:'login', component: Login},
+    { path:'/about', name:'about', component: About},
+    { path:'/contact', name:'contact', component: Contact},
+    { path:'/rifas', name:'rifas', component: Raffles},
+    { path:'/winners', name:'winners', component: Winners},
 ];
 
 const router = createRouter({
