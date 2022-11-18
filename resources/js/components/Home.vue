@@ -1,10 +1,8 @@
 <template>
-    <v-card class="pa-md-4 mx-lg-auto">
-        <v-carousel cycle="true" show-arrows="hover">
-            <v-carousel-item v-for="(item, i) in items" :key="i" :src="item.src" cover>
-            </v-carousel-item>
-        </v-carousel>
-    </v-card>
+    <v-carousel class="rounded-lg" cycle="true" show-arrows="hover">
+        <v-carousel-item v-for="(item, i) in items" :key="i" :src="item.src" cover>
+        </v-carousel-item>
+    </v-carousel>
     <br>
     <v-container fluid class="mx-auto text-center">
         <v-row dense>
