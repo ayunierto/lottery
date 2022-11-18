@@ -1,5 +1,5 @@
 <template>
-    <v-footer :theme="theme" border> 
+    <v-footer :theme="theme" border >
         <v-row justify="center" no-gutters>
             <v-btn v-for="link in links" :key="link" variant="text" class="mx-2" rounded="xl">
                 {{ link }}
@@ -13,13 +13,13 @@
 
 <script setup>
 const links = [
-'INICIO',
-'RIFAS',
-'GANADORES',
-'NOSOTROS',
-'CONTÁCTANOS',
+    'INICIO',
+    'RIFAS',
+    'GANADORES',
+    'NOSOTROS',
+    'CONTÁCTANOS',
 ]
 const props = defineProps({
-    theme: String
+    theme: String,
 })
 </script>
