@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Para permitir recargar en paginas que no sean la principal de vue
+Route::get('/{pathMatch}', function () {
+    return view('welcome');
+})->where('pathMatch', ".*");
