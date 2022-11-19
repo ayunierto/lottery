@@ -1,5 +1,5 @@
 <template>
-    <v-carousel class="rounded-lg" cycle="true" show-arrows="hover">
+    <v-carousel class="rounded-lg" cycle show-arrows="hover">
         <v-carousel-item v-for="(item, i) in items" :key="i" :src="item.src" cover>
         </v-carousel-item>
     </v-carousel>

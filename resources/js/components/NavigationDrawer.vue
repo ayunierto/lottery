@@ -23,7 +23,5 @@
 <script setup>
 const props = defineProps({
     links: Array,
-})
-
-
+});
 </script>

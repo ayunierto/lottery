@@ -9,7 +9,7 @@
             <v-app-bar-nav-icon @click="drawer = !drawer" class="d-flex d-md-none"></v-app-bar-nav-icon>
 
             <v-toolbar-title>
-                <v-img aspect-ratio="1" width="90" contain
+                <v-img aspect-ratio="1" width="80" contain
                     src='https://granrifagran.cl/Imagenes/LogoGrG_Rectacgulo.png'>
                 </v-img>
             </v-toolbar-title>
