@@ -6,13 +6,14 @@
                         <v-icon size="96">mdi-account-lock</v-icon>
                     </v-card-text>
                 </v-card>
+                {{ form }}
             </v-card-text>
-            <v-form>
+            <v-form @submit.prevent="login">
                 <v-card-text>
-                    <v-text-field label="Nombre de usuario*" name="username" :rules="[usernameRules.required, usernameRules.minLength]" type="text" variant="outlined" clearable>
+                    <v-text-field label="Nombre de usuario*" name="username" :rules="[usernameRules.required, usernameRules.minLength]" type="text" variant="outlined" clearable v-model="form.email">
                     </v-text-field>
 
-                    <v-text-field label="Contraseña*" name="password" :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'" :rules="[passwordRules.required, passwordRules.minLenght]" :type="showPassword ? 'text' : 'password'" @click:append="showPassword = !showPassword" variant="outlined" clearable>
+                    <v-text-field label="Contraseña*" name="password" :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'" :rules="[passwordRules.required, passwordRules.minLenght]" :type="showPassword ? 'text' : 'password'" @click:append="showPassword = !showPassword" variant="outlined" clearable v-model="form.password">
                     </v-text-field>
 
                     <div class="caption text-grey-darken-1 text-left">*Campos requeridos</div>
@@ -37,7 +38,18 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, reactive } from 'vue'
+
+let form = reactive({
+    email: '',
+    password: '',
+})
+
+const login = async () => {
+    await axios.post('/api/login', form).then(res => {
+        console.log(res)
+    })
+}
 
 const showPassword = ref(false)
 
@@ -51,6 +63,7 @@ const passwordRules = ref({
     minLenght: (value) =>
     value.length >= 8 || "Debe contener al menos 8 caracteres"
 })
+
 </script>
 
 <style>
