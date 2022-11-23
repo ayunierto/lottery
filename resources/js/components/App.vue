@@ -58,6 +58,7 @@ const links = [
 { name : 'NOSOTROS', link: '/about', icon: 'mdi-account'},
 { name : 'CONTÁCTANOS', link: '/contact', icon: 'mdi-account'},
 { name : 'INGRESAR', link: '/login', icon: 'mdi-account'},
+{ name : 'REGISTRASE', link: '/register', icon: 'mdi-account'},
 ]
 
 </script>

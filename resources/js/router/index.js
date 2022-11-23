@@ -7,8 +7,9 @@ const Contact = () => import ('../components/Contact/Index.vue');
 const Raffles = () => import ('../components/Raffles/Index.vue');
 const Winners = () => import ('../components/Winners/Index.vue');
 const Dashboard = () => import ('../components/Dashboard/Index.vue');
+const Register = () => import ('../components/Auth/Register.vue');
 
-const routes=[
+const routes = [
     { 
         path:'/', 
         name:'home', 
@@ -21,6 +22,14 @@ const routes=[
         path:'/login', 
         name:'login', 
         component: Login,
+        meta: {
+            requiresAuth: false
+        }
+    },
+    { 
+        path:'/register', 
+        name:'register', 
+        component: Register,
         meta: {
             requiresAuth: false
         }
@@ -72,13 +81,14 @@ const router = createRouter({
     routes
 });
 
+// Seguridad de las rutas
 router.beforeEach((to, from) => {
     if (to.meta.requiresAuth && !localStorage.getItem('token')) {
         return { name: 'login'}
     }
-    if (to.meta.requiresAuth == false && localStorage.getItem('token')) {
-        return { name: 'dasboard'}
-    }
+    // if (to.meta.requiresAuth == false && localStorage.getItem('token')) {
+    //     return { name: 'dashboard'}
+    // }
 })
 
 export default router;
