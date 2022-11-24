@@ -1,15 +1,76 @@
 <template>
-    <div>
-        <h1>Home</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates earum ipsum iusto cumque. Quasi mollitia quidem illum explicabo numquam! Numquam, eligendi perspiciatis necessitatibus quia esse quam corrupti. Odit, sequi quas?</p>
-        <p>Explicabo inventore dolorem, alias ut placeat, quidem rem voluptatem optio perspiciatis, fugiat accusantium labore maxime amet quas eaque obcaecati excepturi eos magnam impedit. Minus, praesentium corporis placeat alias fugiat commodi.</p>
-        <p>Cum quis, facilis aliquid omnis perferendis nulla! Reiciendis ipsa eaque dolore veritatis tenetur. Sint ipsam rerum cum corrupti cupiditate quas! Deleniti, doloribus debitis nam sint illum sit et ut vel.</p>
-        <p>Eaque aspernatur quisquam dolor. Iusto, nihil. Natus delectus porro, illo assumenda ut unde temporibus fugit! Possimus, ipsam a quis, eveniet corporis animi perspiciatis voluptates nam, nulla dolorem optio fugiat sint!</p>
-        <p>Numquam, quae mollitia aliquam voluptatum odio non nesciunt vero assumenda debitis amet illo odit inventore itaque optio dignissimos quasi officiis aperiam saepe velit ipsa dolore? Ullam eius necessitatibus quaerat quod!</p>
-        <p>Modi qui officia autem cumque placeat. Sapiente veritatis nobis harum accusamus debitis consequatur praesentium excepturi dolorum fuga eveniet reprehenderit natus, quod ut temporibus incidunt a tenetur, autem, quos itaque ratione.</p>
-        <p>Itaque vero quod architecto illo saepe laborum suscipit ipsam explicabo impedit esse assumenda molestias quam alias optio sequi corrupti non rerum reiciendis ea, quasi, quos recusandae temporibus odit ex. Ipsum.</p>
-        <p>Sit voluptate non corporis temporibus natus, impedit pariatur necessitatibus iusto enim aut cupiditate possimus assumenda eum reprehenderit deleniti consequatur voluptatum. Facere facilis quos quia iste optio minima eligendi ex autem?</p>
-        <p>Rem optio accusamus commodi, odit asperiores animi voluptatum recusandae quos laborum, molestias quod eos nobis quis architecto labore molestiae inventore assumenda sunt exercitationem cumque! Doloremque, nulla. Quam dicta reiciendis debitis?</p>
-        <p>Voluptatem ipsum ab aliquid eius minima temporibus nam, non consequuntur eaque libero natus, recusandae nihil magnam modi provident eveniet deserunt, consequatur praesentium quas facilis voluptatum dolorum a. Deserunt, asperiores molestiae?</p>
-    </div>
+    <v-carousel class="rounded-lg" cycle show-arrows="hover">
+        <v-carousel-item v-for="(item, i) in items" :key="i" :src="item.src" cover>
+        </v-carousel-item>
+    </v-carousel>
+    <br>
+    <v-container fluid class="mx-auto text-center">
+        <v-row dense>
+            <v-col cols="12" md="4">
+                <v-card>
+                    <v-img src="https://ricamente.net/wp-content/uploads/2019/11/Dinero-extra.jpg" height="200px" cover>
+                    </v-img>
+
+                    <v-card-title>
+                        DINERO
+                    </v-card-title>
+                    <v-card-subtitle>
+                        Dinero en Efectivo
+                    </v-card-subtitle>
+                    <br>
+                </v-card>
+            </v-col>
+            <v-col cols="12" md="4">
+                <v-card>
+                    <v-img
+                        src="https://img.freepik.com/psd-premium/banner-3d-entrega-premios-plantilla-promocion-brasil_363450-180.jpg?w=2000"
+                        height="200px" cover></v-img>
+
+                    <v-card-title>
+                        PREMIOS
+                    </v-card-title>
+
+                    <v-card-subtitle>
+                        Articulos y Viajes
+                    </v-card-subtitle>
+                    <br>
+                </v-card>
+            </v-col>
+            <v-col cols="12" md="4">
+                <v-card>
+                    <v-img
+                        src="https://bogota.gov.co/sites/default/files/2022-11/resultados-loteria-bogota-10-noviembre-2022-1.jpeg"
+                        height="200px" cover></v-img>
+
+                    <v-card-title>
+                        DIVERSION
+                    </v-card-title>
+
+                    <v-card-subtitle>
+                        Diversión Asegurada
+                    </v-card-subtitle>
+                    <br>
+                </v-card>
+            </v-col>
+        </v-row>
+
+    </v-container>
+
 </template>
+<script setup>
+import { ref } from "@vue/reactivity";
+const items = ref([
+    {
+        src: 'https://www.fundacionanimalove.org/images/2020/05/06/banner.jpg',
+    },
+    {
+        src: 'https://cloudfront-us-east-1.images.arcpublishing.com/infobae/BWS6PWXNI5FCHKSYIM5TWZCTRU.jpg',
+    },
+    {
+        src: 'https://pbs.twimg.com/media/EwAl4QWXAAATt9x.jpg',
+    },
+    {
+        src: 'https://catedraldelcarmencartago.org/images/2021/09/08/sorteo.jpg',
+    },
+]);
+</script>
