@@ -1,42 +1,44 @@
 <template>
     <v-app id="inspire" :theme="theme">
-        
+
         <v-navigation-drawer v-model="drawer" temporary>
             <NavigationDrawer :links="links" />
         </v-navigation-drawer>
-        
+
         <v-app-bar elevation="10">
             <v-app-bar-nav-icon @click="drawer = !drawer" class="d-flex d-md-none"></v-app-bar-nav-icon>
-            
+
             <v-toolbar-title>
-                <v-img aspect-ratio="1" width="90" contain src='https://granrifagran.cl/Imagenes/LogoGrG_Rectacgulo.png'>
+                <v-img aspect-ratio="1" width="80" contain
+                    src='https://granrifagran.cl/Imagenes/LogoGrG_Rectacgulo.png'>
                 </v-img>
             </v-toolbar-title>
-            
+
             <template class="d-none d-md-flex">
                 <v-btn v-for="link in links" :key="link.link" :to="link.link">
                     {{ link.name }}
                 </v-btn>
             </template>
-            
-            <v-btn :prepend-icon="theme === 'light' ? 'mdi-weather-sunny' : 'mdi-weather-night'" @click="onClick">Tema</v-btn>
-            
+
+            <v-btn :prepend-icon="theme === 'light' ? 'mdi-weather-sunny' : 'mdi-weather-night'" @click="onClick">Tema
+            </v-btn>
+
             <!-- <v-btn icon="mdi-dots-vertical"></v-btn> -->
         </v-app-bar>
-        
+
         <v-main>
             <v-container>
                 <router-view></router-view>
             </v-container>
         </v-main>
-        
+
         <Footer :theme="theme" />
-        
+
     </v-app>
 </template>
 
 <script setup>
-import {ref} from 'vue'
+import { ref } from 'vue'
 import Footer from '@/components/Footer.vue';
 import NavigationDrawer from '@/components/NavigationDrawer.vue';
 
@@ -46,7 +48,7 @@ const drawer = ref(null)
 // Change theme
 const theme = ref('dark')
 
-function onClick () {
+function onClick() {
     theme.value = theme.value === 'light' ? 'dark' : 'light'
 }
 
